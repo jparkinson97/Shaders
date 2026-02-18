@@ -12,3 +12,5 @@ fabric.glsl:
 
 fabric_v2
 <img width="3839" height="2159" alt="image" src="https://github.com/user-attachments/assets/65c9fed6-7f61-48b5-9751-bba5b38474c2" />
+silk 
+![alt text](image.png)
