@@ -96,10 +96,6 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     color += orange * 0.22 * sheen * isNavyRegion;       // orange sheen on navy
     color += cream  * 0.38 * sheen * (1.0 - isNavyRegion); // cream sheen on orange
 
-    // --- VIGNETTE ---
-    float vignette = 1.0 - smoothstep(0.38, 1.05, length(uv - 0.5) * 1.8);
-    color *= vignette;
-
     // --- FILM GRAIN ---
     // Real film grain has two properties simple noise lacks:
     //   1. It snaps per-frame rather than animating continuously.

@@ -39,10 +39,10 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
     // No micro-texture noise — that was the primary source of bumpiness
 
     // --- COLOR PALETTE ---
-    vec3 deepNavy = vec3(0.03, 0.05, 0.25);
-    vec3 navy     = vec3(0.08, 0.14, 0.42);
-    vec3 orange   = vec3(1.0,  0.52, 0.06);
-    vec3 cream    = vec3(1.0,  0.87, 0.55);
+    vec3 deepNavy = vec3(0.047, 0.102, 0.141);
+    vec3 navy     = vec3(0.231, 0.424, 0.502);
+    vec3 orange   = vec3(0.929, 0.576, 0.306);
+    vec3 cream    = vec3(0.569, 0.039, 0.024);
 
     vec3 color = deepNavy;
     // Slightly wider smoothstep ranges for gentler vein edges
@@ -60,7 +60,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord) {
 
     // --- FILM GRAIN ---
     float frameTime = floor(iTime * 24.0);
-    vec2 px = floor(fragCoord.xy / 2.5); // snap to 2.5px grid — controls grain size
+    vec2 px = floor(fragCoord.xy / 7.5); // snap to 2.5px grid — controls grain size
     float gRaw = (hash(px + frameTime * 13.7) + hash(px * 1.3 + frameTime * 27.1 + 5.5)) * 0.5;
     float g = smoothstep(0.2, 0.8, gRaw) - 0.5; // steeper S-curve → sharper contrast between particles
     float luma = dot(color, vec3(0.299, 0.587, 0.114));
